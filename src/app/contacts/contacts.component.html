@@ -1,0 +1,63 @@
+<mat-card>
+  <mat-card-title>Type</mat-card-title>
+  <section>
+    <mat-radio-group [(ngModel)]="optionType">
+      <mat-radio-button *ngFor="let option of options" value="{{option}}">{{option}}</mat-radio-button>
+    </mat-radio-group>
+  </section>
+
+  <mat-card-title>Company</mat-card-title>
+  <section>
+    <mat-checkbox
+    *ngFor="let company of companies"
+    [(ngModel)]="company.checked"
+    (change)="onCompanyChecked(company.name, company.checked)"
+    >{{company.name}}</mat-checkbox>
+  </section>
+
+  <mat-card-title>Material</mat-card-title>
+  <section class="checkboxes">
+    <mat-checkbox
+    *ngFor="let material of materials"
+    [(ngModel)]="material.checked"
+    (change)="onMaterialChecked(material.value, material.checked)"
+    >{{material.name}}</mat-checkbox>
+  </section>
+
+  <mat-card-title>Replacement</mat-card-title>
+  <section class="checkboxes">
+    <mat-checkbox
+    *ngFor="let replacement of replacements"
+    [(ngModel)]="replacement.checked"
+    (change)="onReplacementChecked(replacement.value, replacement.checked)"
+    >{{replacement.name}}</mat-checkbox>
+  </section>
+
+  <mat-card-title>Dk/t</mat-card-title>
+  <div>
+    <section>
+      <mat-radio-group [(ngModel)]="selectedRangeType">
+        <mat-radio-button *ngFor="let option of rangetypes" value="{{option}}">{{option}}</mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <mat-form-field *ngIf="selectedRangeType !== 'Either'" class="dkt value">
+      <input [(ngModel)]="dktValue" matInput placeholder="Dk/t value" type="number">
+    </mat-form-field>
+  </div>
+
+  <mat-card-title>Base Curves Available</mat-card-title>
+  <section>
+    <mat-radio-group [(ngModel)]="selectedBaseCurves">
+      <mat-radio-button *ngFor="let option of baseCurves" value="{{option}}">{{option}}</mat-radio-button>
+    </mat-radio-group>
+  </section>
+
+  <section>
+    <button mat-button (click)="search()">Search</button>
+    <button mat-button (click)="backToTop()">Back to Top</button>
+  </section>
+</mat-card>
+
+<app-contact-table id="resultsTable" [array]="myClonedArray">contactTable</app-contact-table>
+

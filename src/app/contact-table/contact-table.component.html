@@ -1,0 +1,13 @@
+<p *ngIf="array" padding=5px>Generated {{array.length}} results</p>
+<div *ngIf="dataSource && array.length !== 0">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
+
+      <ng-container *ngFor="let column of displayedColumns" matColumnDef="{{column}}">
+        <th class="cell" mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </th>
+        <td class="cell" mat-cell *matCellDef="let contacts"> {{contacts[column]}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
