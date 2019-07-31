@@ -1,11 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 * {
   font-family: 'Roboto', sans-serif;
 }
 
+html {
+  background-color: black;
+}
+
 h1 {
   font-size: 96 px;
+  color: white;
 }
 
 mat-card-title {
@@ -16,11 +21,20 @@ mat-checkbox {
   margin: 20px;
 }
 
-mat-card {
-  margin: 5px;
+.mat-checkbox-layout {
+  margin: 30px 0px;
 }
 
-.mat-button, .mat-radio-button {
+mat-card {
+  margin: 5px;
+  background: grey
+}
+
+button {
+  margin: 0px 20px;
+}
+
+.mat-radio-button {
   margin: 20px;
 }
 
@@ -32,8 +46,14 @@ mat-card {
   height: auto;
 }
 
+th:hover {
+  color: cyan;
+  cursor: pointer;
+}
+
 .mat-cell {
   min-width: 100px;
+  max-width: 300px;
 }
 
 app-footer {
@@ -41,16 +61,25 @@ app-footer {
   height: 60px;
 }
 
-app-footer p {
-  padding: 5px;
+p {
+  color: white;
+  margin: 30px 5px;
 }
 
 section {
   display: flex;
   align-content: center;
   align-items: center;
-  min-height: 55px;
+  min-height: 64px;
   padding: 10px;
   width: 100%;
 }
 
+table {
+  margin: 5px;
+  width: 100%;
+}
+
+button {
+  margin: 5px;
+}
