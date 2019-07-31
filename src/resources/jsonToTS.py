@@ -1,6 +1,6 @@
 if __name__ == "__main__":
-  f = open('./multifocal.json', 'r')
-  out = open('./multifocal.ts', 'w+')
+  f = open('./toric.json', 'r')
+  out = open('./toric.ts', 'w+')
   for line in f:
     if ":" not in line:
       out.write(line)

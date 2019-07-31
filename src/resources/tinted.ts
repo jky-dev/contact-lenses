@@ -1,4 +1,3 @@
-// tslint:disable-next-line: no-unused-expression
 export const tinted = [
   {
 Name: 'FreshLook One-Day',
@@ -81,7 +80,7 @@ Modulus: '',
 SphMin: -8,
 SphMax: 6,
 Steps: '',
-Tints: 'Subtle:\nBlue\nGreen\nBrown\nPure Hazel\nGrey\nVibrant:\nBrillant Blue\n Gemstone Green\nSterling Gray\nHoney',
+Tints: 'Subtle:\nBlue\nGreen\nBrown\nPure Hazel\nGrey\nVibrant: \nBrilliant Blue\nGemstone Green\nSterling Gray\nHoney',
 Notes: '',
 Marketing: ''
   },
