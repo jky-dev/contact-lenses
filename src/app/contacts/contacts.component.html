@@ -7,31 +7,25 @@
   </section>
 
   <mat-card-title>Company</mat-card-title>
-  <section>
-    <mat-checkbox
-    *ngFor="let company of companies"
-    [(ngModel)]="company.checked"
-    (change)="onCompanyChecked(company.name, company.checked)"
-    >{{company.name}}</mat-checkbox>
-  </section>
+  <mat-checkbox
+  *ngFor="let company of companies"
+  [(ngModel)]="company.checked"
+  (change)="onCompanyChecked(company.name, company.checked)"
+  >{{company.name}}</mat-checkbox>
 
   <mat-card-title>Material</mat-card-title>
-  <section class="checkboxes">
-    <mat-checkbox
-    *ngFor="let material of materials"
-    [(ngModel)]="material.checked"
-    (change)="onMaterialChecked(material.value, material.checked)"
-    >{{material.name}}</mat-checkbox>
-  </section>
+  <mat-checkbox
+  *ngFor="let material of materials"
+  [(ngModel)]="material.checked"
+  (change)="onMaterialChecked(material.value, material.checked)"
+  >{{material.name}}</mat-checkbox>
 
   <mat-card-title>Replacement</mat-card-title>
-  <section class="checkboxes">
-    <mat-checkbox
-    *ngFor="let replacement of replacements"
-    [(ngModel)]="replacement.checked"
-    (change)="onReplacementChecked(replacement.value, replacement.checked)"
-    >{{replacement.name}}</mat-checkbox>
-  </section>
+  <mat-checkbox
+  *ngFor="let replacement of replacements"
+  [(ngModel)]="replacement.checked"
+  (change)="onReplacementChecked(replacement.value, replacement.checked)"
+  >{{replacement.name}}</mat-checkbox>
 
   <mat-card-title>Dk/t</mat-card-title>
   <div>
