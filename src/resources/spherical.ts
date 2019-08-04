@@ -146,7 +146,7 @@ Marketing: '',
   {
 Name: 'Proclear',
 Company: 'Coopervision',
-Material: 'SiH',
+Material: 'H',
 Replacement: 'Monthly',
 BaseCurve: 8.6,
 LD: 14.2,
