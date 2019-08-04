@@ -7,25 +7,38 @@
   </section>
 
   <mat-card-title>Company</mat-card-title>
-  <mat-checkbox
-  *ngFor="let company of companies"
-  [(ngModel)]="company.checked"
-  (change)="onCompanyChecked(company.name, company.checked)"
-  >{{company.name}}</mat-checkbox>
+  <section>
+    <div id="checkboxes">
+      <mat-checkbox
+      *ngFor="let company of companies"
+      [(ngModel)]="company.checked"
+      (change)="onCompanyChecked(company.name, company.checked)"
+      >{{company.name}}</mat-checkbox>
+    </div>
+  </section>
 
   <mat-card-title>Material</mat-card-title>
-  <mat-checkbox
-  *ngFor="let material of materials"
-  [(ngModel)]="material.checked"
-  (change)="onMaterialChecked(material.value, material.checked)"
-  >{{material.name}}</mat-checkbox>
+  <section>
+    <div id="checkboxes">
+      <mat-checkbox
+      *ngFor="let material of materials"
+      [(ngModel)]="material.checked"
+      (change)="onMaterialChecked(material.value, material.checked)"
+      >{{material.name}}</mat-checkbox>
+    </div>
+  </section>
 
   <mat-card-title>Replacement</mat-card-title>
-  <mat-checkbox
-  *ngFor="let replacement of replacements"
-  [(ngModel)]="replacement.checked"
-  (change)="onReplacementChecked(replacement.value, replacement.checked)"
-  >{{replacement.name}}</mat-checkbox>
+  <section>
+    <div id="checkboxes">
+      <mat-checkbox
+      *ngFor="let replacement of replacements"
+      [(ngModel)]="replacement.checked"
+      (change)="onReplacementChecked(replacement.value, replacement.checked)"
+      >{{replacement.name}}</mat-checkbox>
+    </div>
+  </section>
+
 
   <mat-card-title>Dk/t</mat-card-title>
   <div>
@@ -47,9 +60,9 @@
     </mat-radio-group>
   </section>
 
-  <section>
-    <button mat-button (click)="search()">Search</button>
-    <button mat-button (click)="backToTop()">Back to Top</button>
+  <section id="button-section">
+    <button mat-stroked-button (click)="search()">Search</button>
+    <button mat-stroked-button color="accent" (click)="backToTop()">Back to Top</button>
   </section>
 </mat-card>
 

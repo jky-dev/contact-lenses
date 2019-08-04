@@ -17,29 +17,36 @@ mat-card-title {
   padding:20px;
 }
 
-mat-checkbox {
-  margin: 20px;
+@media (max-width: 450px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  mat-radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #checkboxes {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.mat-checkbox-layout {
-  margin: 20px 0px;
+mat-checkbox, .mat-radio-button, mat-form-field {
+  margin: 5px 0px 5px 20px;
 }
+
 
 mat-card {
-  margin: 5px;
+  margin: auto;
   background: grey;
+  max-width: 550px;
 }
 
-button {
-  margin: 0px 20px;
+#button-section {
+  margin-top:20px;
 }
 
-.mat-radio-button {
-  margin: 20px;
-}
-
-.mat-form-field {
-  margin: 20px;
+#button-section button {
+  margin-left: 20px;
 }
 
 .mat-row {
@@ -70,7 +77,6 @@ section {
   display: flex;
   align-content: center;
   align-items: center;
-  min-height: 64px;
   width: 100%;
 }
 
@@ -79,6 +85,3 @@ table {
   width: 100%;
 }
 
-button {
-  margin: 5px;
-}
