@@ -4,21 +4,24 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.mat-display-3 {
+  font: 300 56px/56px Roboto,"Helvetica Neue",sans-serif;
+  font-size: 48px;
+  color: white;
+  margin: 10px;
+  text-align: center;
+}
+
 html {
   background-color: black;
 }
 
-h1 {
-  font-size: 96 px;
-  color: white;
-}
-
-mat-card-title {
+.mat-typography h1 {
   padding:20px;
 }
 
-@media (max-width: 450px) {
-  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+@media (max-width: 600px) {
+  /* CSS that should be displayed if width is equal to or less than 600px goes here */
   mat-radio-group {
     display: flex;
     flex-direction: column;
@@ -30,16 +33,24 @@ mat-card-title {
   }
 }
 
+section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 mat-checkbox, .mat-radio-button, mat-form-field {
   margin: 5px 0px 5px 20px;
 }
 
-
 mat-card {
-  margin: auto;
+  margin: 20px auto;
   background: grey;
   max-width: 550px;
 }
+
+/* Bottom of contact finder */
 
 #button-section {
   margin-top:20px;
@@ -47,6 +58,13 @@ mat-card {
 
 #button-section button {
   margin-left: 20px;
+}
+
+/* Table */
+
+p {
+  color: white;
+  margin: 30px 5px;
 }
 
 .mat-row {
@@ -58,30 +76,19 @@ th:hover {
   cursor: pointer;
 }
 
-.mat-cell {
-  min-width: 100px;
-  max-width: 300px;
-}
-
-app-footer {
-  width: 100%;
-  height: 60px;
-}
-
-p {
-  color: white;
-  margin: 30px 5px;
-}
-
-section {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  width: 100%;
+td.mat-cell {
+  border-right: 10px !important;
 }
 
 table {
   margin: 5px;
   width: 100%;
+}
+
+/* Footer */
+
+app-footer {
+  width: 100%;
+  height: 60px;
 }
 

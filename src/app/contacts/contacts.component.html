@@ -1,12 +1,12 @@
-<mat-card>
-  <mat-card-title>Type</mat-card-title>
+<mat-card class="mat-typography">
+  <h1>Type</h1>
   <section>
     <mat-radio-group [(ngModel)]="optionType">
       <mat-radio-button *ngFor="let option of options" value="{{option}}">{{option}}</mat-radio-button>
     </mat-radio-group>
   </section>
 
-  <mat-card-title>Company</mat-card-title>
+  <h1>Company</h1>
   <section>
     <div id="checkboxes">
       <mat-checkbox
@@ -17,7 +17,7 @@
     </div>
   </section>
 
-  <mat-card-title>Material</mat-card-title>
+  <h1>Material</h1>
   <section>
     <div id="checkboxes">
       <mat-checkbox
@@ -28,7 +28,7 @@
     </div>
   </section>
 
-  <mat-card-title>Replacement</mat-card-title>
+  <h1>Replacement</h1>
   <section>
     <div id="checkboxes">
       <mat-checkbox
@@ -40,7 +40,7 @@
   </section>
 
 
-  <mat-card-title>Dk/t</mat-card-title>
+  <h1>Dk/t</h1>
   <div>
     <section>
       <mat-radio-group [(ngModel)]="selectedRangeType">
@@ -53,7 +53,7 @@
     </mat-form-field>
   </div>
 
-  <mat-card-title>Base Curves Available</mat-card-title>
+  <h1>Base Curves Available</h1>
   <section>
     <mat-radio-group [(ngModel)]="selectedBaseCurves">
       <mat-radio-button *ngFor="let option of baseCurves" value="{{option}}">{{option}}</mat-radio-button>
