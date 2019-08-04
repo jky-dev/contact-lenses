@@ -1,7 +1,8 @@
-<p *ngIf="array" padding=5px>Generated {{array.length}} results</p>
-<div *ngIf="dataSource && array.length !== 0">
+<div *ngIf="array">
+  <p>Generated {{array.length}} results</p>
+</div>
+<div *ngIf="array && array.length !== 0">
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
-
       <ng-container *ngFor="let column of displayedColumns" matColumnDef="{{column}}">
         <th class="cell" mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </th>
         <td class="cell" mat-cell *matCellDef="let contacts"> {{contacts[column]}} </td>

@@ -39,6 +39,7 @@ import { FooterComponent } from './footer/footer.component';
     MatTableModule,
     MatRadioModule,
     MatCardModule,
+    MatSortModule,
     RouterModule.forRoot([
       { path: '', component: ContactsComponent }
     ])

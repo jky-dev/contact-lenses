@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnChanges } from '@angular/core';
+import { Component, Input, ViewChild, OnChanges } from '@angular/core';
 import { MatSort } from '@angular/material';
 import { MatTableDataSource } from '@angular/material';
 
@@ -7,21 +7,22 @@ import { MatTableDataSource } from '@angular/material';
   templateUrl: './contact-table.component.html',
   styleUrls: ['./contact-table.component.css']
 })
-export class ContactTableComponent implements OnInit, OnChanges {
-  @Input() array;
-  dataSource;
+export class ContactTableComponent implements OnChanges {
+  @Input() array = [];
+  dataSource = new MatTableDataSource(null);
   constructor() {}
   displayedColumns = [];
+  sort: MatSort;
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-  ngOnInit() {
+  // some work around to use ngIf and sorting
+  @ViewChild(MatSort, {static: false}) set matSort(ms: MatSort) {
+    this.sort = ms;
+    this.setDataSourceAttributes();
   }
 
   ngOnChanges(changes) {
-    if (typeof changes['array']['currentValue'] !== "undefined") {
+    if (typeof changes['array']['currentValue'] !== 'undefined') {
       this.dataSource = new MatTableDataSource(this.array);
-      this.dataSource.sort = this.sort;
       this.displayedColumns = [];
       if (this.array.length === 0) {
         return;
@@ -30,5 +31,9 @@ export class ContactTableComponent implements OnInit, OnChanges {
         this.displayedColumns.push(key);
       });
     }
+  }
+
+  setDataSourceAttributes() {
+    this.dataSource.sort = this.sort;
   }
 }
