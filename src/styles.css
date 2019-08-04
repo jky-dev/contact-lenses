@@ -76,12 +76,11 @@ th:hover {
   cursor: pointer;
 }
 
-td.mat-cell {
-  border-right: 10px !important;
+td.cell, th.cell {
+  padding: 0 5px !important;
 }
 
 table {
-  margin: 5px;
   width: 100%;
 }
 
