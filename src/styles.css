@@ -50,6 +50,12 @@ mat-card {
   max-width: 550px;
 }
 
+#top-button {
+  position: sticky;
+  bottom: 20px;
+  left: 93vw;
+}
+
 /* Bottom of contact finder */
 
 #button-section {

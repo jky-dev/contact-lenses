@@ -62,10 +62,12 @@
 
   <section id="button-section">
     <button mat-stroked-button (click)="search()">Search</button>
-    <button mat-stroked-button color="accent" (click)="backToTop()">Back to Top</button>
   </section>
 </mat-card>
 
 <app-contact-table id="resultsTable" [array]="myClonedArray">contactTable</app-contact-table>
 <app-contact-card id="cards" [array]="myClonedArray"></app-contact-card>
 
+<button id="top-button" mat-mini-fab color="primary" (click)="backToTop()">
+  <mat-icon>arrow_upward</mat-icon>
+</button>
