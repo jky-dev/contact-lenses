@@ -1,0 +1,29 @@
+<div fxShow=false fxShow.xs=true fxShow.sm=true>
+
+
+  <div *ngIf="array">
+    <p>Generated {{array.length}} results</p>
+  </div>
+
+  <div *ngIf="array && array.length !== 0" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+    <mat-card id="card-results" *ngFor="let contact of array" fxFlex.xs=80 fxFlex.sm=40
+    [ngClass]="(contact.Material==='H')?'hydro':'silhydro'">
+        <mat-card-header>
+          <mat-card-title>{{contact.Name}}</mat-card-title>
+        </mat-card-header>
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{contact.Company}}, {{contact.Material}}, {{contact.Replacement}}, {{contact.Dkt}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-card-content>
+          <div *ngFor="let column of columns">
+            <p *ngIf="contact[column] !==''" style="white-space: pre;">{{column}}: {{contact[column]}}
+            </p>
+          </div>
+        </mat-card-content>
+      </mat-expansion-panel>
+    </mat-card>
+  </div>
+
+</div>

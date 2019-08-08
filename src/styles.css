@@ -84,10 +84,38 @@ table {
   width: 100%;
 }
 
+/* Result Cards */
+
+#card-results {
+  margin-bottom: 20px;
+  width: 250px;
+}
+
+.hydro, .hydro mat-expansion-panel, .hydro mat-expansion-panel-header {
+  background: #e5ffff !important;
+}
+
+.silhydro, .silhydro mat-expansion-panel, .silhydro mat-expansion-panel-header {
+  background: #c5e1a5 !important;
+}
+
+#card-results mat-expansion-panel-header {
+  padding:0px;
+  margin: 0px 16px;
+}
+
+#card-results .mat-expansion-panel-body {
+  padding:0px !important;
+  margin: 0px 16px;
+}
+
+#card-results p {
+  margin: 0px 0px 5px 0px;
+}
+
 /* Footer */
 
 app-footer {
   width: 100%;
   height: 60px;
 }
-
