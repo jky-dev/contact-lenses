@@ -1,72 +1,75 @@
 <mat-card id="options-card" class="mat-typography">
-  <h1>Type</h1>
-  <section>
-    <mat-radio-group [(ngModel)]="optionType">
-      <mat-radio-button *ngFor="let option of options" value="{{option}}">{{option}}</mat-radio-button>
-    </mat-radio-group>
-  </section>
-
-  <h1>Company</h1>
-  <section>
-    <div id="checkboxes">
-      <mat-checkbox
-      *ngFor="let company of companies"
-      [(ngModel)]="company.checked"
-      (change)="onCompanyChecked(company.name, company.checked)"
-      >{{company.name}}</mat-checkbox>
-    </div>
-  </section>
-
-  <h1>Material</h1>
-  <section>
-    <div id="checkboxes">
-      <mat-checkbox
-      *ngFor="let material of materials"
-      [(ngModel)]="material.checked"
-      (change)="onMaterialChecked(material.value, material.checked)"
-      >{{material.name}}</mat-checkbox>
-    </div>
-  </section>
-
-  <h1>Replacement</h1>
-  <section>
-    <div id="checkboxes">
-      <mat-checkbox
-      *ngFor="let replacement of replacements"
-      [(ngModel)]="replacement.checked"
-      (change)="onReplacementChecked(replacement.value, replacement.checked)"
-      >{{replacement.name}}</mat-checkbox>
-    </div>
-  </section>
-
-
-  <h1>Dk/t</h1>
-  <div>
+  <div class="options-web" ngClass.xs="options-mobile" ngClass.sm="options-mobile">
+    <h1>Type</h1>
     <section>
-      <mat-radio-group [(ngModel)]="selectedRangeType">
-        <mat-radio-button *ngFor="let option of rangetypes" value="{{option}}">{{option}}</mat-radio-button>
+      <mat-radio-group [(ngModel)]="optionType">
+        <mat-radio-button *ngFor="let option of options" value="{{option}}">{{option}}</mat-radio-button>
       </mat-radio-group>
     </section>
 
-    <mat-form-field *ngIf="selectedRangeType !== 'Either'" class="dkt value">
-      <input [(ngModel)]="dktValue" matInput placeholder="Dk/t value" type="number">
-    </mat-form-field>
+    <h1>Company</h1>
+    <section>
+      <div id="checkboxes">
+        <mat-checkbox
+        *ngFor="let company of companies"
+        [(ngModel)]="company.checked"
+        (change)="onCompanyChecked(company.name, company.checked)"
+        >{{company.name}}</mat-checkbox>
+      </div>
+    </section>
+
+    <h1>Material</h1>
+    <section>
+      <div id="checkboxes">
+        <mat-checkbox
+        *ngFor="let material of materials"
+        [(ngModel)]="material.checked"
+        (change)="onMaterialChecked(material.value, material.checked)"
+        >{{material.name}}</mat-checkbox>
+      </div>
+    </section>
+
+    <h1>Replacement</h1>
+    <section>
+      <div id="checkboxes">
+        <mat-checkbox
+        *ngFor="let replacement of replacements"
+        [(ngModel)]="replacement.checked"
+        (change)="onReplacementChecked(replacement.value, replacement.checked)"
+        >{{replacement.name}}</mat-checkbox>
+      </div>
+    </section>
+
+    <h1>Dk/t</h1>
+    <div>
+      <section>
+        <mat-radio-group [(ngModel)]="selectedRangeType">
+          <mat-radio-button *ngFor="let option of rangetypes" value="{{option}}">{{option}}</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <mat-form-field *ngIf="selectedRangeType !== 'Either'" class="dkt value">
+        <input [(ngModel)]="dktValue" matInput placeholder="Dk/t value" type="number">
+      </mat-form-field>
+    </div>
+
+    <h1>Base Curves Available</h1>
+    <section>
+      <mat-radio-group [(ngModel)]="selectedBaseCurves">
+        <mat-radio-button *ngFor="let option of baseCurves" value="{{option}}">{{option}}</mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section id="button-section">
+      <button mat-stroked-button (click)="search()">Search</button>
+    </section>
   </div>
-
-  <h1>Base Curves Available</h1>
-  <section>
-    <mat-radio-group [(ngModel)]="selectedBaseCurves">
-      <mat-radio-button *ngFor="let option of baseCurves" value="{{option}}">{{option}}</mat-radio-button>
-    </mat-radio-group>
-  </section>
-
-  <section id="button-section">
-    <button mat-stroked-button (click)="search()">Search</button>
-  </section>
 </mat-card>
 
-<app-contact-table id="resultsTable" [array]="myClonedArray">contactTable</app-contact-table>
-<app-contact-card id="cards" [array]="myClonedArray"></app-contact-card>
+<div id="results">
+  <app-contact-table fxShow="true" fxShow.xs="false" fxShow.sm="false" id="resultsTable" [array]="myClonedArray">contactTable</app-contact-table>
+  <app-contact-card fxShow="false" fxShow.xs="true" fxShow.sm="true" id="cards" [array]="myClonedArray"></app-contact-card>
+</div>
 
 <button *ngIf="!atTop" id="top-button" mat-mini-fab color="primary" (click)="backToTop()">
   <mat-icon>arrow_upward</mat-icon>

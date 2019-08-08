@@ -3,6 +3,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
+/* Title */
 .mat-display-3 {
   font: 300 56px/56px Roboto,"Helvetica Neue",sans-serif;
   font-size: 48px;
@@ -10,22 +11,25 @@
   text-align: center;
 }
 
+/* Options */
 .mat-typography h1 {
-  padding:0px 20px;
   margin-top: 16px;
 }
 
-@media (max-width: 600px) {
-  /* CSS that should be displayed if width is equal to or less than 600px goes here */
-  mat-radio-group {
-    display: flex;
-    flex-direction: column;
-  }
+#options-card {
+  padding: 16px 36px;
+  margin: 20px auto;
+  max-width: 550px;
+}
 
-  #checkboxes {
-    display: flex;
-    flex-direction: column;
-  }
+.options-mobile mat-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.options-mobile #checkboxes {
+  display: flex;
+  flex-direction: column;
 }
 
 section {
@@ -36,12 +40,7 @@ section {
 }
 
 mat-checkbox, .mat-radio-button, mat-form-field {
-  margin: 5px 0px 5px 20px;
-}
-
-#options-card {
-  margin: 20px auto;
-  max-width: 550px;
+  margin: 5px 20px 5px 0px;
 }
 
 #top-button {
@@ -56,14 +55,10 @@ mat-checkbox, .mat-radio-button, mat-form-field {
   margin-top:20px;
 }
 
-#button-section button {
-  margin-left: 20px;
-}
-
 /* Table */
 
 p {
-  margin: 30px 5px;
+  margin: 10px 0px;
 }
 
 .mat-row {

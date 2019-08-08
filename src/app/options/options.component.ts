@@ -5,7 +5,6 @@ import { tinted } from '../../resources/tinted';
 import { toric } from '../../resources/toric';
 import { Injectable } from '@angular/core';
 import { NgAnimateScrollService } from 'ng-animate-scroll';
-import { MatButtonModule } from '@angular/material';
 
 @Component({
   selector: 'app-contacts',
@@ -91,7 +90,7 @@ export class OptionsComponent implements OnInit {
     this.filterReplacements(this.myClonedArray);
     this.filterDkt(this.myClonedArray);
     this.filterBaseCurves(this.myClonedArray);
-    this.animateScrollService.scrollToElement('resultsTable', 750);
+    this.animateScrollService.scrollToElement('results', 750);
   }
 
   onCompanyChecked(name: string, checked: boolean): void {
