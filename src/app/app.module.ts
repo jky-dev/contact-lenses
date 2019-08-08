@@ -11,15 +11,19 @@ import { FormsModule } from '@angular/forms';
 import { MatRadioModule, MatIconModule, MatPaginatorModule, MatTableModule, MatSortModule } from '@angular/material';
 import { MatSelectModule, MatAutocompleteModule, MatInputModule, MatOptionModule, MatFormFieldModule, MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { ContactTableComponent } from './contact-table/contact-table.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
+import { ContactCardComponent } from './contact-card/contact-card.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
     ContactTableComponent,
-    FooterComponent
+    FooterComponent,
+    ContactCardComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,8 @@ import { FooterComponent } from './footer/footer.component';
     MatRadioModule,
     MatCardModule,
     MatSortModule,
+    FlexLayoutModule,
+    MatExpansionModule,
     RouterModule.forRoot([
       { path: '', component: ContactsComponent }
     ])

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -7,17 +7,13 @@
 .mat-display-3 {
   font: 300 56px/56px Roboto,"Helvetica Neue",sans-serif;
   font-size: 48px;
-  color: white;
   margin: 10px;
   text-align: center;
 }
 
-html {
-  background-color: black;
-}
-
 .mat-typography h1 {
-  padding:20px;
+  padding:0px 20px;
+  margin-top: 16px;
 }
 
 @media (max-width: 600px) {
@@ -44,10 +40,15 @@ mat-checkbox, .mat-radio-button, mat-form-field {
   margin: 5px 0px 5px 20px;
 }
 
-mat-card {
+#options-card {
   margin: 20px auto;
-  background: grey;
   max-width: 550px;
+}
+
+#top-button {
+  position: sticky;
+  bottom: 20px;
+  left: 93vw;
 }
 
 /* Bottom of contact finder */
@@ -63,7 +64,6 @@ mat-card {
 /* Table */
 
 p {
-  color: white;
   margin: 30px 5px;
 }
 
@@ -84,10 +84,38 @@ table {
   width: 100%;
 }
 
+/* Result Cards */
+
+#card-results {
+  margin-bottom: 20px;
+  width: 250px;
+}
+
+.hydro, .hydro mat-expansion-panel, .hydro mat-expansion-panel-header {
+  background: #e5ffff !important;
+}
+
+.silhydro, .silhydro mat-expansion-panel, .silhydro mat-expansion-panel-header {
+  background: #c5e1a5 !important;
+}
+
+#card-results mat-expansion-panel-header {
+  padding:0px;
+  margin: 0px 16px;
+}
+
+#card-results .mat-expansion-panel-body {
+  padding:0px !important;
+  margin: 0px 16px;
+}
+
+#card-results p {
+  margin: 0px 0px 5px 0px;
+}
+
 /* Footer */
 
 app-footer {
   width: 100%;
   height: 60px;
 }
-
