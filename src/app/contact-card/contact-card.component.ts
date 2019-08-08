@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { MatSelectChange } from '@angular/material';
 
 @Component({
   selector: 'app-contact-card',
@@ -7,7 +8,10 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 })
 export class ContactCardComponent implements OnInit, OnChanges {
   @Input() array = [];
+  sortedArray = [];
   columns = [];
+  orderOptions = ['Name', 'Company', 'Dkt'];
+  selected = 'Name';
   constructor() { }
 
   ngOnInit() {
@@ -26,7 +30,16 @@ export class ContactCardComponent implements OnInit, OnChanges {
           this.columns.push(key);
         }
       });
+      this.sortedArray = this.filterBy(this.selected, this.array);
     }
+  }
+
+  changeHandler(event: MatSelectChange) {
+    this.sortedArray = this.filterBy(event.value, this.array);
+  }
+
+  filterBy(value: string, array: any[]) {
+    return array.sort((a, b) => a[value] > b[value] ? 1 : a[value] === b[value] ? 0 : -1);
   }
 
 }
