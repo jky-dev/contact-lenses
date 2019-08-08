@@ -18,7 +18,7 @@ export class ContactCardComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes) {
-    if (typeof changes['array']['currentValue'] !== 'undefined') {
+    if (typeof changes.array.currentValue !== 'undefined') {
       this.columns = [];
       if (this.array.length === 0) {
         return;
