@@ -18,7 +18,7 @@
         </mat-expansion-panel-header>
         <mat-card-content>
           <div *ngFor="let column of columns">
-            <p *ngIf="contact[column] !==''" style="white-space: pre;">{{column}}: {{contact[column]}}
+            <p *ngIf="contact[column] !==''">{{column}}: {{contact[column]}}
             </p>
           </div>
         </mat-card-content>
