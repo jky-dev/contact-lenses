@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactsComponent } from './contacts/contacts.component';
+import { OptionsComponent } from './options/options.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MatRadioModule, MatIconModule, MatPaginatorModule, MatTableModule, MatSortModule } from '@angular/material';
@@ -20,7 +20,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [
     AppComponent,
-    ContactsComponent,
+    OptionsComponent,
     ContactTableComponent,
     FooterComponent,
     ContactCardComponent
@@ -47,7 +47,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FlexLayoutModule,
     MatExpansionModule,
     RouterModule.forRoot([
-      { path: '', component: ContactsComponent }
+      { path: '', component: OptionsComponent }
     ])
   ],
   exports: [

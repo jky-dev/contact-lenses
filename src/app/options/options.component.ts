@@ -9,12 +9,12 @@ import { MatButtonModule } from '@angular/material';
 
 @Component({
   selector: 'app-contacts',
-  templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css'],
+  templateUrl: './options.component.html',
+  styleUrls: ['./options.component.css'],
   encapsulation : ViewEncapsulation.None,
 })
 @Injectable()
-export class ContactsComponent implements OnInit {
+export class OptionsComponent implements OnInit {
   dataSource: Array<object>;
   myClonedArray;
   animateScrollService = new NgAnimateScrollService();
