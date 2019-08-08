@@ -68,6 +68,6 @@
 <app-contact-table id="resultsTable" [array]="myClonedArray">contactTable</app-contact-table>
 <app-contact-card id="cards" [array]="myClonedArray"></app-contact-card>
 
-<button id="top-button" mat-mini-fab color="primary" (click)="backToTop()">
+<button *ngIf="!atTop" id="top-button" mat-mini-fab color="primary" (click)="backToTop()">
   <mat-icon>arrow_upward</mat-icon>
 </button>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, HostListener } from '@angular/core';
 import { multifocal } from '../../resources/multifocal';
 import { spherical } from '../../resources/spherical';
 import { tinted } from '../../resources/tinted';
@@ -18,6 +18,7 @@ export class OptionsComponent implements OnInit {
   dataSource: Array<object>;
   myClonedArray;
   animateScrollService = new NgAnimateScrollService();
+  atTop = true;
 
   optionType = 'Spherical';
   selectedCompanies: Array<string> = [];
@@ -51,6 +52,15 @@ export class OptionsComponent implements OnInit {
 
   backToTop() {
     this.animateScrollService.scrollToElement('top', 750);
+  }
+
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    if (window.scrollY === 0) {
+      this.atTop = true;
+    } else {
+      this.atTop = false;
+    }
   }
 
   search() {
