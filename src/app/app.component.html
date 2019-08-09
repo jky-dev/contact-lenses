@@ -1,9 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
+<div id="vanta">
   <h1 class="mat-display-3">
     {{ title }}
   </h1>
+  <div>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
 </div>
 
-<router-outlet></router-outlet>
-<app-footer></app-footer>

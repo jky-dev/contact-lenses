@@ -27,7 +27,11 @@
               "src/custom-theme.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/scripts/three.r92.min.js",
+              "src/scripts/vanta.net.min.js",
+              "src/scripts/vanta.waves.min.js"
+            ]
           },
           "configurations": {
             "production": {

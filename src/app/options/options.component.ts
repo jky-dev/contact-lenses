@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, HostListener } from '@angular/core';
+import { Component, ViewEncapsulation, HostListener, AfterViewInit } from '@angular/core';
 import { multifocal } from '../../resources/multifocal';
 import { spherical } from '../../resources/spherical';
 import { tinted } from '../../resources/tinted';
@@ -6,6 +6,7 @@ import { toric } from '../../resources/toric';
 import { Injectable } from '@angular/core';
 import { NgAnimateScrollService } from 'ng-animate-scroll';
 
+declare let VANTA: any;
 @Component({
   selector: 'app-contacts',
   templateUrl: './options.component.html',
@@ -13,7 +14,7 @@ import { NgAnimateScrollService } from 'ng-animate-scroll';
   encapsulation : ViewEncapsulation.None,
 })
 @Injectable()
-export class OptionsComponent implements OnInit {
+export class OptionsComponent implements AfterViewInit {
   dataSource: Array<object>;
   myClonedArray;
   animateScrollService = new NgAnimateScrollService();
@@ -47,7 +48,14 @@ export class OptionsComponent implements OnInit {
   rangetypes = ['Either', 'Maximum', 'Minimum'];
   baseCurves = ['Either', '1', '2'];
 
-  ngOnInit() {}
+  ngAfterViewInit(): void {
+    VANTA.WAVES({
+      el: '#options-card',
+      color: 0xc8c8c8,
+      shininess: 0.00,
+      waveSpeed: 0.45
+    });
+  }
 
   backToTop() {
     this.animateScrollService.scrollToElement('top', 750);
